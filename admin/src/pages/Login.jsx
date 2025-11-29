@@ -51,7 +51,7 @@ const Login = () => {
   }
 
   return (
-    <div className='min-h-screen flex items-center justify-center'>
+    <div className='p-4 lg:p-0 min-h-screen flex items-center justify-center'>
       <form onSubmit={(e) => handleSubmit(e)} className='h-fit w-full max-w-96 text-sm text-zinc-600 p-8 rounded-xl shadow-lg border border-zinc-200 flex flex-col items-start justify-center gap-4'>
         <h2 className='text-2xl font-medium'>{adminLogin ? 'Admin Login' : 'Doctor Login'}</h2>
         <p>{adminLogin ? 'Please enter admin email and password' : 'Please enter doctor email and password'}</p>
