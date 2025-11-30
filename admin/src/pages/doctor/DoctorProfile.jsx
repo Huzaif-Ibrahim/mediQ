@@ -62,7 +62,7 @@ const DoctorProfile = () => {
       <p className='text-zinc-900 font-medium mb-6'>Profile</p>
 
       {
-        loading ? <div className='w-full h-full flex items-center justify-start'><CircularProgress varient="determinate" /></div> :
+        loading ? <div className='w-full h-full flex items-center justify-center'><CircularProgress varient="determinate" /></div> :
           <div className='w-full lg:w-[600px] flex flex-col items-start justify-center gap-4'>
             <div className='w-full h-full lg:w-[300px] lg:h-[300px] bg-[#4fd19f] rounded-lg'>
               <img src={docData.image} className='h-full w-full' alt="" />
