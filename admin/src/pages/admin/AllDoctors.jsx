@@ -12,13 +12,13 @@ const AllDoctors = () => {
   }, [atoken])
 
   return (
-    <div className='p-4 lg:p-8 bg-[#4fd19f]/5 h-[calc(100vh-64px)] w-full overflow-y-scroll pb-8 lg:pb-0'>
+    <div className='p-4 lg:p-8 bg-[#4fd19f]/5 h-[calc(100vh-64px)] w-full overflow-y-scroll pb-16 lg:pb-0'>
       <p className='text-zinc-900 font-medium mb-6'>All Doctors</p>
 
       {loading ? <div className='w-full h-full flex items-center justify-center'><CircularProgress varient="determinate" /></div> : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-6 lg:mt-0'>
         {
           doctors.map((item, indx) => {
-            return <div key={indx} className='overflow-hidden w-full h-90 rounded-2xl border border-[#4fd19f]/50 flex flex-col cursor-pointer hover:-translate-y-3 transition-all duration-500'>
+            return <div key={indx} className='overflow-hidden w-full h-fit lg:h-90 rounded-2xl border border-[#4fd19f]/50 flex flex-col cursor-pointer hover:-translate-y-3 transition-all duration-500'>
               <div className='pt-4 bg-[#4fd19f]/20 flex items-end h-fit'>
                 <img src={item.image} alt="" />
               </div>

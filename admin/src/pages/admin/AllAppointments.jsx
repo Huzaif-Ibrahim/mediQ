@@ -13,7 +13,7 @@ const AllAppointments = () => {
   }, [atoken])
 
   return (
-    <div className='p-4 lg:p-8 bg-[#4fd19f]/5 h-[calc(100vh-64px)] w-full overflow-y-scroll pb-8 lg:pb-0'>
+    <div className='p-4 lg:p-8 bg-[#4fd19f]/5 h-[calc(100vh-64px)] w-full overflow-y-scroll pb-16 lg:pb-0'>
       <p className='text-zinc-900 font-medium mb-6'>All Appointments</p>
 
       {loading ? <div className='w-full h-full flex items-center justify-center'><CircularProgress varient="determinate" /></div> : <div className='w-full bg-white lg:mt-8 rounded-lg border border-zinc-300'>
