@@ -77,7 +77,7 @@ const AddDoctor = () => {
 
 
   return (
-    <div className='p-4 lg:p-8 bg-[#4fd19f]/5 h-[calc(100vh-64px)] w-full overflow-y-scroll'>
+    <div className='p-4 lg:p-8 bg-[#4fd19f]/5 h-[calc(100vh-64px)] w-full overflow-y-scroll pb-8 lg:pb-0'>
       <p className='text-zinc-900 font-medium mb-6'>Add Doctor</p>
 
       <form onSubmit={(e) => onSubmitHandler(e)} className='w-full lg:w-[900px] text-zinc-600 bg-white border border-zinc-300 p-8 rounded-lg flex flex-col items-start justify-start gap-4'>
