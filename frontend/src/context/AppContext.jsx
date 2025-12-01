@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { toast } from "react-toastify";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export const AppContext = createContext()
 export const backend_url = import.meta.env.VITE_BACKEND_URL
@@ -12,8 +13,10 @@ const AppContextProvider = ({ children }) => {
     const [doctors, setDoctors] = useState([])
     const [userData, setUserData] = useState({})
     const [token, setToken] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const fetchDoctors = async () => {
+      setLoading(true)
       try {
         const response = await axios.get(backend_url + '/api/doctor/list')
         if(response.data.success){
@@ -23,10 +26,13 @@ const AppContextProvider = ({ children }) => {
         }
       } catch (error) {
         toast.error(error.message)
+      } finally {
+        setLoading(false)
       }
     }
 
     const fetchUserData = async () => {
+      setLoading(true)
       try {
         const response = await axios.post(backend_url + '/api/user/get-profile',{}, {headers:{token}})
         console.log(response)
@@ -37,6 +43,8 @@ const AppContextProvider = ({ children }) => {
         }
       } catch (error) {
         toast.error(error.message)
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -59,7 +67,10 @@ const AppContextProvider = ({ children }) => {
         userData,
         setUserData,
         fetchUserData,
-        fetchDoctors
+        fetchDoctors,
+        loading,
+        setLoading,
+        CircularProgress
     }
 
   return (
