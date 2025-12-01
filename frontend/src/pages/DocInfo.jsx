@@ -124,7 +124,7 @@ const DocInfo = () => {
         <>
             <div className='pt-6 min-h-screen'>
                 {
-                    loading ? <div className='w-full h-full flex items-center justify-center'><CircularProgress varient="determinate" /></div> :
+                    loading ? <div className='w-full h-screen flex items-center justify-center'><CircularProgress varient="determinate" /></div> :
                         <>
                             <div className='grid grid-cols-1 lg:grid-cols-[1fr_3fr] lg:gap-4'>
                                 <div className='bg-[#4fd19f] w-full h-fit rounded-lg z-1'>

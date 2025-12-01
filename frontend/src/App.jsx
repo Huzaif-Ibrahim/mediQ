@@ -18,7 +18,20 @@ const App = () => {
   return (
     <>
       <div className='max-w-7xl mx-auto px-4 lg:px-0'>
-        <ToastContainer />
+        <ToastContainer
+          position="top-center"
+          autoClose={1500}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          draggable={false}
+          theme="light"
+          toastClassName={() =>
+            "bg-white shadow-md flex items-center rounded-md text-gray-800 text-sm px-3 py-2 mt-2"
+          }
+        />
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

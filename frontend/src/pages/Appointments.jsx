@@ -35,6 +35,7 @@ const Appointments = () => {
             if (data.success) {
                 toast.success(data.message)
                 window.location.reload()
+                toast.info('Appointment cancelled')
             } else {
                 toast.error(data.message)
             }
@@ -54,7 +55,6 @@ const Appointments = () => {
     };
 
     const initPay = async (order) => {
-        setRazorpayLoading(true)
         await loadRazorpay()
         const options = {
             key: import.meta.env.VITE_RAZORPAY_KEY_ID,
@@ -83,6 +83,7 @@ const Appointments = () => {
     }
 
     const handleRazorpay = async (appointmentId) => {
+        setRazorpayLoading(true)
         try {
             const { data } = await axios.post(backend_url + '/api/payment/razorpay', { appointmentId }, { headers: { token } })
             if (data.success) {
@@ -126,7 +127,7 @@ const Appointments = () => {
                                     <p className='text-yellow-500 text-center text-sm lg:text-base'>Payment completed</p>
                                 </div> : <div className='col-span-2 lg:col-span-1 flex flex-col justify-center gap-2 lg:gap-4'>
                                     <button onClick={() => handleRazorpay(item._id)} className='text-white cursor-pointer w-full flex items-center justify-center py-2 text-xs lg:text-base rounded bg-[#4fd19f]'>{
-                                        !razorpayLoading ? 'Pay here' : <svg width="24" height="24" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        !razorpayLoading ? 'Pay here' : <svg className='h-4 w-4 lg:h-6 lg:w-6' fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="4" cy="12" r="3" opacity="1">
                                                 <animate id="spinner_qYjJ" begin="0;spinner_t4KZ.end-0.25s" attributeName="opacity" dur="0.75s" values="1;.2" fill="freeze" />
                                             </circle>

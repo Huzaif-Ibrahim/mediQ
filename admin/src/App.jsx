@@ -25,7 +25,20 @@ const App = () => {
     <>
       {
         dtoken || atoken ? <>
-          <ToastContainer />
+          <ToastContainer
+          position="top-center"
+          autoClose={1500}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          draggable={false}
+          theme="light"
+          toastClassName={() =>
+            "bg-white shadow-md flex items-center rounded-md text-gray-800 text-sm px-3 py-2 mt-2"
+          }
+          />
           <Navbar />
           <div className='w-full flex items-start h-[calc(100vh-76px)] overflow-hidden'>
             <Sidebar />

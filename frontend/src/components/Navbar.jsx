@@ -72,7 +72,7 @@ const Navbar = () => {
                   <div className='absolute font-light z-10 flex -bottom-40 bg-zinc-50 -right-16 shadow-lg p-2 min-w-48 flex-col justify-center items-start'>
                     <p onClick={() => {navigate('/profile'); setMenu(false); setSubMenu(false)}} className='border-b border-zinc-300 w-full p-2 hover:bg-[#4fd19f] transition-all duration-300 cursor-pointer'>My profile</p>
                     <p onClick={() => {navigate('/appointments'); setMenu(false); setSubMenu(false)}} className='border-b border-zinc-300 p-2 w-full hover:bg-[#4fd19f] transition-all duration-300 cursor-pointer'>My appointments</p>
-                    <p onClick={() => logout()} className='w-full p-2 hover:bg-red-500 transition-all duration-300 cursor-pointer'>Logout</p>
+                    <p onClick={() => {logout(); setMenu(false); setSubMenu(false)}} className='w-full p-2 hover:bg-red-500 transition-all duration-300 cursor-pointer'>Logout</p>
                   </div>
                 )
               }
